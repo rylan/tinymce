@@ -84,7 +84,7 @@ define("tinymce/pasteplugin/WordFilter", [
 					listStartTextNode.value = '';
 
 					var nextNode = listStartTextNode.next;
-					if (nextNode && nextNode.type == 3) {
+					if (nextNode && nextNode.type === 3) {
 						nextNode.value = nextNode.value.replace(/^\u00a0+/, '');
 					}
 
@@ -101,7 +101,7 @@ define("tinymce/pasteplugin/WordFilter", [
 				for (var i = 0; i < paragraphs.length; i++) {
 					node = paragraphs[i];
 
-					if (node.name == 'p' && node.firstChild) {
+					if (node.name === 'p' && node.firstChild) {
 						// Find first text node in paragraph
 						var nodeText = '';
 						var listStartTextNode = node.firstChild;
@@ -188,7 +188,7 @@ define("tinymce/pasteplugin/WordFilter", [
 				return null;
 			}
 
-			if (editor.settings.paste_enable_default_filters === false) {
+			if ( !editor.settings.paste_enable_default_filters ) {
 				return;
 			}
 
