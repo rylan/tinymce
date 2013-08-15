@@ -175,7 +175,7 @@ define("tinymce/pasteplugin/WordFilter", [
 						}
 
 						// Output only valid styles
-						if (retainStyleProperties == "all" || (validStyles && validStyles[name])) {
+						if (retainStyleProperties === "all" || (validStyles && validStyles[name])) {
 							outputStyle += name + ':' + value + ';';
 						}
 					});
@@ -239,7 +239,7 @@ define("tinymce/pasteplugin/WordFilter", [
 						node.attr('style', filterStyles(node, node.attr('style')));
 
 						// Remove pointess spans
-						if (node.name == 'span' && !node.attributes.length) {
+						if (node.name === 'span' && !node.attributes.length) {
 							node.unwrap();
 						}
 					}
